@@ -65,7 +65,12 @@
       <ol>
       <% output.each do |o| %>
         <li>
-        <%= link_to "Download", o[:value] %> (<%= number_to_human_size(o[:size].to_i) %>)
+        <% if uri?(o[:value]) %>
+          <%= link_to "Download", o[:value] %> (<%= number_to_human_size(o[:size].to_i) %>)
+        <% else %>
+          <%= text_area_tag "aa", o[:value], :rows => 4, :cols => 20, :class => "span4" %>
+        <% end %>
+        
         </li>
       <% end %>
       </ol>
