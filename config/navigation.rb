@@ -51,6 +51,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     primary.item :workflows, 'Workflows', workflows_path
     primary.item :executions, 'Executions', executions_path
+    primary.item :files, 'Uploaded files', files_path
     primary.dom_class = 'nav'
 
     # Add an item which has a sub navigation (same params, but with block)
